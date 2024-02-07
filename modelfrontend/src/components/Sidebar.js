@@ -1,5 +1,5 @@
 import Navbar from "./Navbar";
-import { BaseLogoIcon, MenuCloseIcon } from "../assets/icons";
+import { MenuCloseIcon } from "../assets/icons";
 
 export default function Sidebar({ mobileMenuOpen, setMobileMenuOpen }) {
   return (
@@ -8,7 +8,7 @@ export default function Sidebar({ mobileMenuOpen, setMobileMenuOpen }) {
         <div className="flex flex-col gap-6 items-center w-full grow">
           <div className="flex gap-3 items-center w-[192px]">
             <div className="w-12 h-12 rounded bg-black-100 overflow-hidden">
-              <img src="https://www.soulhq.ai/assets/soul-ui-logo.webp" />
+              <img src="https://www.soulhq.ai/assets/soul-ui-logo.webp" alt="logo"/>
             </div>
             <div className="flex flex-col gap-1 grow items-start">
               <span className="text-blue-30 font-nunito font-semibold text-2xl">
@@ -27,7 +27,7 @@ export default function Sidebar({ mobileMenuOpen, setMobileMenuOpen }) {
             <div className="flex flex-col gap-6 items-center w-full grow">
               <div className="flex gap-3 items-center w-[192px]">
                 <div className="w-12 h-12 rounded bg-black-100 overflow-hidden">
-                  <img src="https://www.soulhq.ai/assets/soul-ui-logo.webp" />
+                  <img src="https://www.soulhq.ai/assets/soul-ui-logo.webp"  alt="logo"/>
                 </div>
                 <div className="flex flex-col gap-1 grow items-start">
                   <span className="text-blue-30 font-nunito font-semibold text-xl leading-normal">
