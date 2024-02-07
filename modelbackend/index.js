@@ -18,7 +18,8 @@ app.post("/", (req, res) => {
   if (matchedResponse) {
     res.json({ response: matchedResponse.response });
   } else {
-    res.status(404).json({ error: "Response not found for the question." });
+   const defaultResponse = data.find((item) => item.question === "default");
+   res.json({ response: defaultResponse.response });
   }
 });
 

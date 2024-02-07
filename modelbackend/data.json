@@ -1,10 +1,18 @@
 [
   {
-    "question": "How are you?",
+    "question": "how are you?",
     "response": "I am fine."
+  },
+  {
+    "question": "hey",
+    "response": "Hello, How i can you help you today?"
   },
   {
     "question": "Can you help me with this question?",
     "response": "Yes, sure."
+  },
+  {
+    "question": "default",
+    "response": "We are AI model not able to answer."
   }
 ]
