@@ -3,7 +3,7 @@ import React from "react";
 function StaticSugestion() {
   return (
     <>
-      <div class="flex flex-col items-center justify-center p-5 mb-28">
+      <div class="flex flex-col items-center justify-center p-5 mb-24">
         <img
           src="https://www.soulhq.ai/assets/soul-ui-logo.webp"
           alt="logo"

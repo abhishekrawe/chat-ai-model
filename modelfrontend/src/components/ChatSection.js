@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import axios from "axios";
 import StaticSugestion from "./StaticSugestion";
+import ThumbsDownIcon from "../assets/icons/ThumbsDownIcon";
+import ThumbsUpIcon from "../assets/icons/ThumbsUpIcon";
+import StarRating from "./Feedback/StartRating";
 
 function ChatSection() {
   const [question, setQuestion] = useState("");
   const [conversation, setConversation] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(true);
+  const [showRating, setShowRating] = useState(false);
+  const [ratingValue, setRatingValue] = useState(2);
 
   const handleAsk = async () => {
     try {
@@ -20,6 +25,10 @@ function ChatSection() {
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const handleRatingChange = (event, newValue) => {
+    setRatingValue(newValue); 
   };
 
   return (
@@ -45,11 +54,22 @@ function ChatSection() {
                 className="h-12 w-12 rounded-full"
                 alt="user"
               />
-              <p className="bg-blue-200 rounded-lg p-2">
-                <span className="font-bold text-lg">SoulAI : </span>
-                {item.response}
-              </p>
+              <div className="relative group">
+                <p className="bg-blue-200 rounded-lg p-2">
+                  <span className="font-bold text-lg">SoulAI : </span>
+                  {item.response}
+                </p>
+                <div className="hidden group-hover:flex absolute top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 items-center justify-end gap-10 pt-12">
+                  <ThumbsDownIcon />
+                  <div onClick={() => setShowRating(!showRating)}>
+                    <ThumbsUpIcon />
+                  </div>
+                </div>
+              </div>
             </div>
+            {showRating && (
+              <StarRating value={ratingValue} onChange={handleRatingChange}/>
+            )}
           </div>
         ))}
       </div>
