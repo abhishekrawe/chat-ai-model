@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import axios from "axios";
 import StaticSugestion from "./StaticSugestion";
 import ThumbsDownIcon from "../assets/icons/ThumbsDownIcon";
@@ -10,8 +10,21 @@ function ChatSection() {
   const [conversation, setConversation] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(true);
   const [showRating, setShowRating] = useState(false);
+  const [selectedQuestionIndex, setSelectedQuestionIndex] = useState(null);
   const [ratingValue, setRatingValue] = useState(2);
 
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axios.get("http://localhost:5000");
+        setConversation(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+    fetchData();
+  }, []);
+  
   const handleAsk = async () => {
     try {
       const res = await axios.post("/", { question });
@@ -30,6 +43,11 @@ function ChatSection() {
   const handleRatingChange = (event, newValue) => {
     setRatingValue(newValue); 
   };
+
+   const handleThumbsUpClick = (index) => {
+     setSelectedQuestionIndex(index);
+     setShowRating(true);
+   };
 
   return (
     <div className="flex flex-col">
@@ -61,14 +79,16 @@ function ChatSection() {
                 </p>
                 <div className="hidden group-hover:flex absolute top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 items-center justify-end gap-10 pt-12">
                   <ThumbsDownIcon />
-                  <div onClick={() => setShowRating(!showRating)}>
+                  <div onClick={() => handleThumbsUpClick(index)}>
                     <ThumbsUpIcon />
                   </div>
                 </div>
               </div>
             </div>
-            {showRating && (
-              <StarRating value={ratingValue} onChange={handleRatingChange}/>
+            {showRating && selectedQuestionIndex === index && (
+              <div className="px-14">
+                <StarRating value={ratingValue} onChange={handleRatingChange} />
+              </div>
             )}
           </div>
         ))}
