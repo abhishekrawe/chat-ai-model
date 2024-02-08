@@ -49,6 +49,15 @@ function ChatSection() {
      setFeedbackMessages([...feedbackMessages, feedback]);
    };
 
+   const handleSaveConversation = async () => {
+     try {
+       await axios.post("/saveConversation", { conversation });
+       console.log("Conversation saved successfully!");
+     } catch (error) {
+       console.error("Error saving conversation:", error);
+     }
+   };
+
 
   return (
     <div className="flex flex-col">
@@ -119,6 +128,11 @@ function ChatSection() {
           onClick={handleAsk}
           className="px-4 py-4 rounded-lg bg-blue-10 text-white-10">
           Ask
+        </button>
+        <button
+          onClick={handleSaveConversation}
+          className="px-4 py-4 ml-4 rounded-lg bg-blue-10 text-white-10">
+          Save Conversation
         </button>
       </div>
       {showFeedbackModal && (
