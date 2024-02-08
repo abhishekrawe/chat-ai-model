@@ -1,9 +1,11 @@
-import React, { useState , useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import StaticSugestion from "./StaticSugestion";
 import ThumbsDownIcon from "../assets/icons/ThumbsDownIcon";
 import ThumbsUpIcon from "../assets/icons/ThumbsUpIcon";
 import StarRating from "./Feedback/StartRating";
+import FeedbackModal from "./Feedback/FeedbackModal";
+
 
 function ChatSection() {
   const [question, setQuestion] = useState("");
@@ -12,18 +14,7 @@ function ChatSection() {
   const [showRating, setShowRating] = useState(false);
   const [selectedQuestionIndex, setSelectedQuestionIndex] = useState(null);
   const [ratingValue, setRatingValue] = useState(2);
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await axios.get("http://localhost:5000");
-        setConversation(response.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    }
-    fetchData();
-  }, []);
+  const [showFeedbackModal, setShowFeedbackModal] = useState(false);
   
   const handleAsk = async () => {
     try {
@@ -48,6 +39,11 @@ function ChatSection() {
      setSelectedQuestionIndex(index);
      setShowRating(true);
    };
+
+   const handleThumbsDownClick = (index) => {
+     setShowFeedbackModal(true);
+   };
+
 
   return (
     <div className="flex flex-col">
@@ -78,7 +74,9 @@ function ChatSection() {
                   {item.response}
                 </p>
                 <div className="hidden group-hover:flex absolute top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 items-center justify-end gap-10 pt-12">
-                  <ThumbsDownIcon />
+                  <div onClick={() => handleThumbsDownClick(index)}>
+                    <ThumbsDownIcon />
+                  </div>
                   <div onClick={() => handleThumbsUpClick(index)}>
                     <ThumbsUpIcon />
                   </div>
@@ -112,6 +110,9 @@ function ChatSection() {
           Ask
         </button>
       </div>
+      {showFeedbackModal && (
+        <FeedbackModal handleClose={() => setShowFeedbackModal(false)} />
+      )}
     </div>
   );
 }
