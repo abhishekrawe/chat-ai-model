@@ -5,7 +5,7 @@
 
 @layer base {
   body {
-    @apply bg-white-40 font-figtree;
+    @apply bg-blue-40 font-figtree;
   }
 }
 
