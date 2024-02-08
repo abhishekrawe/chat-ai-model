@@ -14,7 +14,7 @@ function StaticSugestion() {
         </h1>
       </div>
       <div className="flex flex-wrap justify-between">
-        <div className="w-full md:w-1/2 lg:w-1/2 mb-6 md:mb-0 p-3">
+        <div className="w-full md:w-1/2 lg:w-1/2 p-3">
           <div className="bg-white-10 rounded-lg shadow-md p-4">
             <p className="font-semibold text-xl mb-2 text-gray-lightbulma">
               Recommend a dish
@@ -24,7 +24,7 @@ function StaticSugestion() {
             </p>
           </div>
         </div>
-        <div className="w-full md:w-1/2 lg:w-1/2 mb-6 md:mb-0 p-3">
+        <div className="w-full md:w-1/2 lg:w-1/2 p-3">
           <div className="bg-white-10 rounded-lg shadow-md p-4">
             <p className="font-semibold text-xl mb-2 text-gray-lightbulma">
               Recommend a dish
@@ -34,7 +34,7 @@ function StaticSugestion() {
             </p>
           </div>
         </div>
-        <div className="w-full md:w-1/2 lg:w-1/2 mb-6 md:mb-0 p-3">
+        <div className="w-full md:w-1/2 lg:w-1/2  p-3">
           <div className="bg-white-10 rounded-lg shadow-md p-4">
             <p className="font-semibold text-xl mb-2 text-gray-lightbulma">
               Recommend a dish
@@ -44,7 +44,7 @@ function StaticSugestion() {
             </p>
           </div>
         </div>
-        <div className="w-full md:w-1/2 lg:w-1/2 mb-6 md:mb-0 p-3">
+        <div className="w-full md:w-1/2 lg:w-1/2 p-3">
           <div className="bg-white-10 rounded-lg shadow-md p-4">
             <p className="font-semibold text-xl mb-2 text-gray-lightbulma">
               Recommend a dish

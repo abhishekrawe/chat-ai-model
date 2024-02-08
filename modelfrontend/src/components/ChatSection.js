@@ -5,6 +5,7 @@ import StaticSugestion from "./StaticSugestion";
 function ChatSection() {
   const [question, setQuestion] = useState("");
   const [conversation, setConversation] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(true);
 
   const handleAsk = async () => {
     try {
@@ -15,6 +16,7 @@ function ChatSection() {
       ];
       setConversation(newConversation);
       setQuestion("");
+      setShowSuggestions(false);
     } catch (error) {
       console.error(error);
     }
@@ -22,7 +24,7 @@ function ChatSection() {
 
   return (
     <div className="flex flex-col">
-       <StaticSugestion/>
+      {showSuggestions && <StaticSugestion />}
       <div className="flex-grow p-4">
         {conversation.map((item, index) => (
           <div key={index}>
@@ -57,6 +59,11 @@ function ChatSection() {
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
           placeholder="Chat with AI model powerd by soul AI..."
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleAsk();
+            }
+          }}
           className="flex-grow rounded-lg p-4 mr-4 shadow-md border-gray-text border "
         />
         <button
