@@ -15,6 +15,7 @@ function ChatSection() {
   const [selectedQuestionIndex, setSelectedQuestionIndex] = useState(null);
   const [ratingValue, setRatingValue] = useState(2);
   const [showFeedbackModal, setShowFeedbackModal] = useState(false);
+  const [feedbackMessages, setFeedbackMessages] = useState([]);
   
   const handleAsk = async () => {
     try {
@@ -42,6 +43,10 @@ function ChatSection() {
 
    const handleThumbsDownClick = (index) => {
      setShowFeedbackModal(true);
+   };
+
+   const handleFeedbackSubmit = (feedback) => {
+     setFeedbackMessages([...feedbackMessages, feedback]);
    };
 
 
@@ -90,6 +95,12 @@ function ChatSection() {
             )}
           </div>
         ))}
+        {feedbackMessages.map((feedback, index) => (
+          <div key={index} className="bg-gray-200 rounded-lg p-2 mb-2 px-14">
+            <span className="font-bold text-lg">Feedback : </span>
+            {feedback}
+          </div>
+        ))}
       </div>
       <div className="flex items-center p-4">
         <input
@@ -111,7 +122,10 @@ function ChatSection() {
         </button>
       </div>
       {showFeedbackModal && (
-        <FeedbackModal handleClose={() => setShowFeedbackModal(false)} />
+        <FeedbackModal
+          handleClose={() => setShowFeedbackModal(false)}
+          handleFeedbackSubmit={handleFeedbackSubmit}
+        />
       )}
     </div>
   );

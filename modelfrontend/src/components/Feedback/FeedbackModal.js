@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import ThumbsDownIcon from "../../assets/icons/ThumbsDownIcon";
 
-function FeedbackModal({ handleClose }) {
+function FeedbackModal({ handleClose , handleFeedbackSubmit }) {
   const [feedback, setFeedback] = useState("");
 
   const handleSubmit = () => {
-    // Here you can handle the submission of the feedback, e.g., send it to a server
     console.log("Feedback submitted:", feedback);
-    // Close the modal after submission
+    handleFeedbackSubmit(feedback);
     handleClose();
   };
 
