@@ -4,6 +4,7 @@ import { BellIcon } from "./BellIcon";
 import { DashboardIcon } from "./DashboardIcon";
 import ThumbsUpIcon from "./ThumbsUpIcon";
 import ThumbsDownIcon from "./ThumbsDownIcon";
+import EditIcon from "./EditIcon";
 
 export {
   BellIcon,
@@ -11,5 +12,6 @@ export {
   MenuOpenIcon,
   DashboardIcon,
   ThumbsDownIcon,
-  ThumbsUpIcon
+  ThumbsUpIcon,
+  EditIcon,
 };
