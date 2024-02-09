@@ -2,21 +2,36 @@
   {
     "id": 1,
     "question": "how are you?",
-    "response": "I am fine."
+    "response": "I am fine. What about you?"
   },
   {
     "id": 2,
     "question": "hey",
-    "response": "Hello, How i can you help you today?"
+    "response": "Hello! How can I assist you today?"
   },
   {
     "id": 3,
-    "question": "Can you help me with this question?",
-    "response": "Yes, sure."
+    "question": "can you help me with this question?",
+    "response": "Yes, sure. Ask your Question"
   },
   {
     "id": 4,
     "question": "default",
-    "response": "We are AI model not able to answer."
-  }
+    "response": "As an AI language model, I don't have access to this detials, Therefore, How can I assist you further?"
+  },
+  {
+    "id": 5,
+    "question": "hi",
+    "response": "Hi there! How can I assist you today?"
+  },
+  {
+    "id": 6,
+    "question": "hello",
+    "response": "Hi there! How can I assist you today?"
+  },
+   {
+     "id": 6,
+     "question": "i am also fine",
+     "response": "That's great to hear! If you have any questions or need assistance with anything, feel free to let me know. I'm here to help!"
+   }
 ]

@@ -17,10 +17,10 @@ function StaticSugestion() {
         <div className="w-full md:w-1/2 lg:w-1/2 p-3">
           <div className="bg-white-10 rounded-lg shadow-md p-4">
             <p className="font-semibold text-md mb-2 text-gray-lightbulma">
-              Show me a code snippet
+              Start with "hi" , "hello" , "how are you?"
             </p>
             <p className=" text-gray-lightbulma  text-sm">
-              of a websites sticky header 
+              they will response accordingly 
             </p>
           </div>
         </div>
