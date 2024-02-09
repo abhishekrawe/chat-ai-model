@@ -28,6 +28,8 @@ app.post("/saveConversation", (req, res) => {
   const conversationGroup = req.body.conversation.map((item) => ({
     question: item.question,
     response: item.response,
+    rating: item.rating,
+    feedback: item.feedback,
   }));
   const conversationWithId = {
     id: uuidv4(),

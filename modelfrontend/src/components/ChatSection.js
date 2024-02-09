@@ -13,27 +13,33 @@ function ChatSection() {
   const [showSuggestions, setShowSuggestions] = useState(true);
   const [showRating, setShowRating] = useState(false);
   const [selectedQuestionIndex, setSelectedQuestionIndex] = useState(null);
-  const [ratingValue, setRatingValue] = useState(2);
+  const [ratingValue, setRatingValue] = useState(0);
   const [showFeedbackModal, setShowFeedbackModal] = useState(false);
   const [feedbackMessages, setFeedbackMessages] = useState([]);
   
-  const handleAsk = async () => {
-    try {
-      const res = await axios.post("/", { question });
-      const newConversation = [
-        ...conversation,
-        { question, response: res.data.response },
-      ];
-      setConversation(newConversation);
-      setQuestion("");
-      setShowSuggestions(false);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+ const handleAsk = async () => {
+   try {
+     const res = await axios.post("/", { question });
+     const newConversationItem = {
+       question,
+       response: res.data.response,
+       rating: null, 
+       feedback: null,
+     };
+     setConversation([...conversation, newConversationItem]);
+     setQuestion("");
+     setShowSuggestions(false);
+   } catch (error) {
+     console.error(error);
+   }
+ };
+   
 
-  const handleRatingChange = (event, newValue) => {
-    setRatingValue(newValue); 
+  const handleRatingChange = (newValue) => {
+    const updatedConversation = [...conversation];
+    updatedConversation[selectedQuestionIndex].rating = newValue;
+    setConversation(updatedConversation);
+    console.log("Updated conversation with rating:", updatedConversation);
   };
 
    const handleThumbsUpClick = (index) => {
@@ -42,16 +48,27 @@ function ChatSection() {
    };
 
    const handleThumbsDownClick = (index) => {
+     setSelectedQuestionIndex(index);
      setShowFeedbackModal(true);
    };
 
    const handleFeedbackSubmit = (feedback) => {
+     const updatedConversation = [...conversation];
+     updatedConversation[selectedQuestionIndex].feedback = feedback;
+     setConversation(updatedConversation);
      setFeedbackMessages([...feedbackMessages, feedback]);
    };
 
    const handleSaveConversation = async () => {
      try {
-       await axios.post("/saveConversation", { conversation });
+       const conversationToSave = conversation.map((item) => ({
+         ...item,
+         Ratings: item.rating, 
+         Feedback: item.feedback,
+       }));
+       await axios.post("/saveConversation", {
+         conversation: conversationToSave,
+       });
        console.log("Conversation saved successfully!");
      } catch (error) {
        console.error("Error saving conversation:", error);
