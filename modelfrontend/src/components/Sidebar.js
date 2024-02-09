@@ -1,5 +1,6 @@
 import { MenuCloseIcon } from "../assets/icons";
 import { EditIcon} from "../assets/icons";
+import {Link} from 'react-router-dom';
 
 export default function Sidebar({ mobileMenuOpen, setMobileMenuOpen }) {
   return (
@@ -20,6 +21,7 @@ export default function Sidebar({ mobileMenuOpen, setMobileMenuOpen }) {
               <EditIcon />
             </div>
           </div>
+          <Link to="/pastconversation"> Past Conversation</Link>
         </div>
       </div>
 
@@ -42,6 +44,7 @@ export default function Sidebar({ mobileMenuOpen, setMobileMenuOpen }) {
                   <EditIcon />
                 </div>
               </div>
+              <Link to="/pastconversation"> Past Conversation</Link>
               <div
                 onClick={() => setMobileMenuOpen(false)}
                 className="absolute top-[2px] left-[175px] bg-black-100 text-black-12 rounded-full p-2 z-50">

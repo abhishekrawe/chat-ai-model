@@ -56,6 +56,18 @@ app.post("/saveConversation", (req, res) => {
   });
 });
 
+app.get("/conversations", (req, res) => {
+  fs.readFile("conversation.json", "utf-8", (err, data) => {
+    if (err) {
+      console.error("Error reading conversation:", err);
+      res.status(500).send("Error reading conversation");
+    } else {
+      const conversations = JSON.parse(data);
+      res.json(conversations);
+    }
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
