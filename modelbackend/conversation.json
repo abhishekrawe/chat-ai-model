@@ -2,12 +2,16 @@
   {
     "id": "c78d61ed-957f-4ce6-97ab-7a507ae81cdc",
     "question": "hey",
-    "response": "Hello, How i can you help you today?"
+    "response": "Hello, How i can you help you today?",
+    "rating": 5,
+    "feedback": "This is Feedback"
   },
   {
     "id": "917a9610-f58d-4518-8840-add9ba47a408",
     "question": "how are you?",
-    "response": "I am fine."
+    "response": "I am fine.",
+    "rating": 3,
+    "feedback": "Testing"
   },
   {
     "id": "a38315eb-e21b-4934-92ee-d5662c7b443e",
@@ -15,9 +19,16 @@
       { "question": "hey", "response": "Hello, How i can you help you today?" },
       {
         "question": "how are you",
-        "response": "We are AI model not able to answer."
+        "response": "We are AI model not able to answer.",
+        "rating": 5,
+        "feedback": "Fix this Solution"
       },
-      { "question": "how are you?", "response": "I am fine." }
+      {
+        "question": "how are you?",
+        "response": "I am fine.",
+        "rating": 3,
+        "feedback": "Not Getting Desired value"
+      }
     ]
   },
   {
@@ -25,17 +36,21 @@
     "conversations": [
       {
         "question": "hey how are you?",
-        "response": "We are AI model not able to answer."
+        "response": "We are AI model not able to answer.",
+        "rating": 1,
+        "feedback": "This isnt helpful"
       },
-      { "question": "hey", "response": "Hello, How i can you help you today?" },
-      { "question": "how are you?", "response": "I am fine." }
-    ]
-  },
-  {
-    "id": "01d7dd35-6a15-41dc-af0b-651f7ec1d3e0",
-    "conversations": [
-      { "question": "hey", "response": "Hello, How i can you help you today?" },
-      { "question": "how are you?", "response": "I am fine." }
+      { "question": "hey", 
+      "response": "Hello, How i can you help you today?",
+      "rating": 5,
+      "feedback": "Need some improvment"
+     },
+      {
+        "question": "how are you?",
+        "response": "I am fine.",
+        "rating": 5,
+        "feedback": "This is harmful / unsafe"
+      }
     ]
   }
 ]
