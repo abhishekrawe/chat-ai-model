@@ -3,6 +3,9 @@ import { EditIcon} from "../assets/icons";
 import {Link} from 'react-router-dom';
 
 export default function Sidebar({ mobileMenuOpen, setMobileMenuOpen }) {
+   const handleRefresh = () => {
+     window.location.reload();
+   };
   return (
     <>
       <div className="row-span-full bg-white-10 hidden tablet:flex flex-col items-center py-4 px-[10px] gap-4 text-black-100 h-100">
@@ -15,7 +18,9 @@ export default function Sidebar({ mobileMenuOpen, setMobileMenuOpen }) {
               />
             </div>
             <div className="flex gap-5  grow items-start cursor-pointer">
-              <span className="text-black-10 font-nunito font-semibold text-lg leading-normal">
+              <span
+                className="text-black-10 font-nunito font-semibold text-lg leading-normal"
+                onClick={handleRefresh}>
                 <Link to="/">New Chat</Link>
               </span>
               <EditIcon />
@@ -40,7 +45,9 @@ export default function Sidebar({ mobileMenuOpen, setMobileMenuOpen }) {
                   />
                 </div>
                 <div className="flex gap-3 grow items-start cursor-pointer">
-                  <span className="text-black-10 font-nunito font-semibold text-lg leading-normal">
+                  <span
+                    className="text-black-10 font-nunito font-semibold text-lg leading-normal"
+                    onClick={handleRefresh}>
                     <Link to="/">New Chat</Link>
                   </span>
                   <EditIcon />

@@ -6,6 +6,7 @@ import StarRatings from "../components/Feedback/StartRating"
 function PastConversation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [conversations, setConversations] = useState([]);
+  const [selectedRating, setSelectedRating] = useState(null);
 
   useEffect(() => {
     fetchConversations();
@@ -25,6 +26,22 @@ function PastConversation() {
     }
   };
 
+   const handleRatingFilter = (event) => {
+     const rating =
+       event.target.value === "All" ? null : parseInt(event.target.value);
+     setSelectedRating(rating);
+   };
+
+  const filteredConversations = selectedRating
+    ? conversations.filter(
+        (conversation) =>
+          conversation.conversations &&
+          conversation.conversations.some(
+            (item) => item.rating === selectedRating
+          )
+      )
+    : conversations;
+
   return (
     <div className="flex h-screen overflow-hidden">
       {/* Sidebar */}
@@ -43,7 +60,23 @@ function PastConversation() {
             <h1 className="text-3xl font-bold text-center text-gray-lightbulma">
               Conversation History
             </h1>
-            {conversations.toReversed().map((conversation) => (
+
+            <div className="flex justify-center my-4">
+              {/* Filter buttons */}
+               <select
+                onChange={handleRatingFilter}
+                className="px-4 py-2 mx-2 rounded-full bg-gray-200 text-gray-700"
+              >
+                <option value="All">All Ratings</option>
+                {[1, 2, 3, 4, 5].map((rating) => (
+                  <option key={rating} value={rating}>
+                    {rating} Star
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {filteredConversations.toReversed().map((conversation) => (
               <>
                 <h1 className="text-xl px-5"> Todays </h1>
                 <div
