@@ -14,14 +14,16 @@ export default function Sidebar({ mobileMenuOpen, setMobileMenuOpen }) {
                 alt="logo"
               />
             </div>
-            <div className="flex gap-5  grow items-start">
-              <span className="text-black-10 font-nunito font-semibold text-xl">
-                New Chat
+            <div className="flex gap-5  grow items-start cursor-pointer">
+              <span className="text-black-10 font-nunito font-semibold text-lg leading-normal">
+                <Link to="/">New Chat</Link>
               </span>
               <EditIcon />
             </div>
           </div>
-          <Link to="/pastconversation"> Past Conversation</Link>
+          <div className="bg-blue-20 px-8 py-2 rounded text-black-10 font-semibold hover:bg-blue-40 cursor-pointer">
+            <Link to="/pastconversation"> Past Conversation</Link>
+          </div>
         </div>
       </div>
 
@@ -37,9 +39,9 @@ export default function Sidebar({ mobileMenuOpen, setMobileMenuOpen }) {
                     alt="logo"
                   />
                 </div>
-                <div className="flex gap-3 grow items-start">
+                <div className="flex gap-3 grow items-start cursor-pointer">
                   <span className="text-black-10 font-nunito font-semibold text-lg leading-normal">
-                    New Chat
+                    <Link to="/">New Chat</Link>
                   </span>
                   <EditIcon />
                 </div>
