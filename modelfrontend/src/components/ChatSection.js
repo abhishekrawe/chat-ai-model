@@ -104,14 +104,17 @@ function ChatSection() {
                   <span className="font-bold text-lg">SoulAI : </span>
                   {item.response}
                 </p>
-                <div className="hidden group-hover:flex absolute top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 items-center justify-end gap-10 pt-12">
-                  <div onClick={() => handleThumbsDownClick(index)}>
-                    <ThumbsDownIcon />
+                {(index === conversation.length - 1 ||
+                  conversation.length === 1) && (
+                  <div className="hidden group-hover:flex absolute top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 items-center justify-end gap-10 pt-12">
+                    <div onClick={() => handleThumbsDownClick(index)}>
+                      <ThumbsDownIcon />
+                    </div>
+                    <div onClick={() => handleThumbsUpClick(index)}>
+                      <ThumbsUpIcon />
+                    </div>
                   </div>
-                  <div onClick={() => handleThumbsUpClick(index)}>
-                    <ThumbsUpIcon />
-                  </div>
-                </div>
+                )}
               </div>
             </div>
             {showRating && selectedQuestionIndex === index && (
