@@ -48,7 +48,7 @@ We incorporated a rating system for filtering conversations, enhancing the user 
 Instead, we focus on capturing feedback at the end of each conversation.
 
 ## 🌵Reasoning behind your technical choices:
-- I chose React.js for the frontend and used Tailwind CSS/Material UI for styling. 
+- I chose React.js for the front end and used Tailwind CSS/Material UI for styling. 
 The back-end is built with Express.js and manages data storage using file system operations.
 - It handles tasks like fetching default responses, saving conversations, and retrieving past conversations via HTTP requests. 
 - The React-based front-end allows users to interact with the chat interface, ask questions, get AI responses, give feedback, and rate responses.
@@ -65,15 +65,14 @@ Our goal is to create a user-friendly platform for communicating with AI and sto
       - user should able to give ratings out of 5 at the end of conversation
       - used 5 stars for ratings
       - user should be able to give subjective feedback
-4.	**user is done having that conversation, the chat gets saved. API call to save this response**
+4.	**user is done having that conversation, the chat gets saved.**
 5.  **chat can be revisted from the panel on the side/top bar .**
-6.  **conversation is also share-able with , make sure there is a button which allows the user to share this conversation**
-7.  **another view where the user can see all feedback points across**
+6.  **another view where the user can see all feedback points across**
       - conversations and filter them based on rating
 
-8. **Easy to navigate, well-designed, well-commented**
-9. **Use mock the AI model as an API to return a fixed response.**
-10. **mock the APIs as nodejs or any other backend API framework.**
+7. **Easy to navigate, well-designed, well-commented**
+8. **Use mock the AI model as an API to return a fixed response.**
+9. **mock the APIs as nodejs or any other backend API framework.**
 
 ## 🔮Tech stack:
 [ReactJs](https://react.dev/) 
