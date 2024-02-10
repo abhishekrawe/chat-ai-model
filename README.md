@@ -28,8 +28,8 @@ npm install
 npm run start
 ```
 4. Ensure the backend server is running before starting the frontend. 
-- View the frontend result by opening [http://localhost:5000](http://localhost:5000) in your browser.
-- View the backend result by opening [http://localhost:3000](http://localhost:3000) in your browser.
+- View the frontend result by opening [http://localhost:3000](http://localhost:3000) in your browser.
+- View the backend result by opening [http://localhost:5000](http://localhost:5000) in your browser.
 
 ## 🎊Some Glimpse of the App🎊
 
