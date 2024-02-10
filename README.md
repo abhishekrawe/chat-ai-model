@@ -1,8 +1,9 @@
-# 💖SoulAI - chat with AI
+<div align="center">
+  <img src="https://www.soulhq.ai/assets/soul-ui-logo.webp" height="60" width="60"/>
+  <p>SoulAI - chat with AI</p>
+</div>
 
-This Project is an assignment  which is build using [ReactJs](https://react.dev/) , [Tailwind CSS](https://tailwindcss.com/) and [Material UI](https://mui.com/) .
-
-# 🤡The Problem statement is -
+# 💙The Problem statement is -
 
 - Implement an application where the user can chat with an AI model. 
 - Beyond this, the user should be able to give some feedback at each stage of the conversation
@@ -27,8 +28,12 @@ npm install
 npm run start
 ```
 4. Ensure the backend server is running before starting the frontend. 
-- View the frontend result by opening [http://localhost:3000](http://localhost:3000) in your browser.
-- View the frontend result by opening [http://localhost:3000](http://localhost:5000) in your browser.
+- View the frontend result by opening [http://localhost:5000](http://localhost:5000) in your browser.
+- View the backend result by opening [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 🎊Some Glimpse of the App🎊
+
+https://github.com/abhishekrawe/chat-ai-model/assets/65603830/8c7a715f-6e5c-45b4-ab10-ac9dd0c0a89f
 
 ## 🍨Reasoning behind your design choices:
 
@@ -43,7 +48,11 @@ We incorporated a rating system for filtering conversations, enhancing the user 
 Instead, we focus on capturing feedback at the end of each conversation.
 
 ## 🌵Reasoning behind your technical choices:
-
+- I chose React.js for the frontend and used Tailwind CSS/Material UI for styling. 
+The back-end is built with Express.js and manages data storage using file system operations.
+- It handles tasks like fetching default responses, saving conversations, and retrieving past conversations via HTTP requests. 
+- The React-based front-end allows users to interact with the chat interface, ask questions, get AI responses, give feedback, and rate responses.
+Our goal is to create a user-friendly platform for communicating with AI and storing conversation history.
 
 
 ## 🤖Features:
@@ -52,7 +61,7 @@ Instead, we focus on capturing feedback at the end of each conversation.
 2.	**user can give some feedback at each stage of the conversation**
 3.	**feedback**
       - like / dislike - using thumbsup/thumbsdown button
-      - button are hidden and float when the mouse hovers over AI model's 
+      - button are hidden and float when the mouse hovers over AI model's
       - user should able to give ratings out of 5 at the end of conversation
       - used 5 stars for ratings
       - user should be able to give subjective feedback
@@ -66,10 +75,8 @@ Instead, we focus on capturing feedback at the end of each conversation.
 9. **Use mock the AI model as an API to return a fixed response.**
 10. **mock the APIs as nodejs or any other backend API framework.**
 
-## 🎊Some Glimpse of the App🎊
-
-
-
-
-
+## 🔮Tech stack:
+[ReactJs](https://react.dev/) 
+[Tailwind CSS](https://tailwindcss.com/) 
+[Material UI](https://mui.com/) 
 
